@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ScoreCounter</string>
+    <string name="button_teamA">Button</string>
+    <string name="button_teamB">Button</string>
+    <string name="button1">Button1</string>
+    <string name="show_countup">0</string>
+    <string name="show_ennemy_count">0</string>
+    <string name="ecount_up">ecount_up</string>
+    <string name="countUp">countUp</string>
+    <string name="teama">teamA</string>
+    <string name="teamb">teamB</string>
+    <string name="Show_ecount">0</string>
+    <string name="ShowA_count">0</string>
+    <string name="image_desc">image_desc</string>
+    <string name="image_desc2">image_desc2</string>
+    <string name="your_team_won_by">Your team won by:</string>
+
+
+</resources>
