@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@drawable/cup"
     tools:context=".WinnerActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
-        android:layout_width="0dp"
+        android:layout_width="731dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
 
@@ -24,105 +22,96 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/button_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:text="@string/Make_call"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_location" />
-
 
     <Button
         android:id="@+id/button_text_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/send_msg"
         app:layout_constraintBottom_toTopOf="@+id/button_location"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textPlainMessage"
         app:layout_constraintTop_toBottomOf="@+id/tv_display2" />
+
+    <EditText
+        android:id="@+id/text_location"
+        android:layout_width="293dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:autofillHints=""
+        android:background="@color/cardview_light_background"
+        android:gravity="center_horizontal"
+        android:hint="@string/search_for_location"
+        android:inputType="textLongMessage"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/button_call"
+        app:layout_constraintEnd_toStartOf="@+id/button_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPlainMessage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
 
         android:id="@+id/button_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="94dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/search_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_location"
-        app:layout_constraintTop_toBottomOf="@+id/button_text_msg" />
-
-    <EditText
-        android:id="@+id/text_location"
-        android:layout_width="218dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:autofillHints=""
-
-        android:background="@color/cardview_light_background"
-        android:gravity="center_horizontal"
-        android:hint="@string/search_for_location"
-
-        android:inputType="textLongMessage"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/button_call"
-        app:layout_constraintEnd_toStartOf="@+id/button_location"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_location"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintStart_toEndOf="@+id/text_location"
+        app:layout_constraintTop_toBottomOf="@+id/button_text_msg"
+        app:layout_constraintVertical_bias="0.137" />
 
     <EditText
         android:id="@+id/textPlainMessage"
-        android:layout_width="224dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-
+        android:layout_width="278dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:autofillHints=""
         android:background="@color/cardview_light_background"
-
         android:gravity="center_horizontal"
         android:hint="@string/enter_message"
         android:inputType="text"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/text_location"
         app:layout_constraintEnd_toStartOf="@+id/button_text_msg"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_display2"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_display2" />
+
+    <Button
+        android:id="@+id/button_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/Make_call"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_location" />
+
 
     <TextView
         android:id="@+id/tv_display2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
         android:gravity="center_horizontal"
         android:text="@string/your_team_won_by"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.391"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="271dp"
+        tools:layout_editor_absoluteY="60dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
