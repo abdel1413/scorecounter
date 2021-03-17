@@ -20,6 +20,8 @@
     <string name="enter_message">Enter message</string>
     <string name="search_for_location">search_for_location</string>
     <string name="search_location">Search</string>
+    <string name="btn_camera">Camera</string>
+    <string name="image_view_description">Image_view</string>
 
 
 </resources>

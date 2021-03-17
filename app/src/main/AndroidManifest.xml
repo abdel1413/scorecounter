@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScoreCounter">
-        <activity android:name=".WinnerShare"></activity>
+        <activity android:name=".showImageActivity"></activity>
+        <activity android:name=".WinnerShare" />
         <activity android:name=".WinnerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

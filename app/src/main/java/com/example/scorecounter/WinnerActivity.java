@@ -1,11 +1,13 @@
 package com.example.scorecounter;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +19,11 @@ public class WinnerActivity extends AppCompatActivity implements View.OnClickLis
 
     private TextView tv_display;
     private static final String TAG = " WinnerActivity";
+    private static final int REQUEST_PHONE_CALL = 2;
+   private static final int REQUEST_IMAGE_PIC = 1;
+
    private  EditText textLocation, textPlainMessage;
-   private Button messageBtn, locationBtn, dialBtn;
+   private Button messageBtn, locationBtn, dialBtn , btn_picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +58,7 @@ public class WinnerActivity extends AppCompatActivity implements View.OnClickLis
         messageBtn = findViewById(R.id.button_text_msg);
         locationBtn = findViewById(R.id.button_location);
         dialBtn = findViewById(R.id.button_call);
+        btn_picture = findViewById(R.id.button_pic);
 
         Log.d(TAG ,"end of method ");
     }
@@ -77,11 +83,14 @@ public class WinnerActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.button_location:
                 Log.d(TAG,"location button clicked");
-                FindLocation();
                 break;
             case R.id.button_call:
                 Log.d(TAG,"call button clicked");
                 DialNumber();
+                break;
+            case R.id.button_pic:
+                Log.d(TAG, "camera btn clicked");
+                TakePicture();
                 break;
         }
 
@@ -130,6 +139,40 @@ public class WinnerActivity extends AppCompatActivity implements View.OnClickLis
         startActivity(intent);
 
         Log.d(TAG, "end of  DialNumber method");
+
+    }
+
+    private void  TakePicture(){
+
+        Log.d(TAG, "inside of TakePicture method");
+
+        Intent intentPic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(intentPic.resolveActivity(getPackageManager()) != null){
+
+            startActivity(intentPic);
+           // startActivityForResult(intentPic, REQUEST_IMAGE_PIC);
+
+            //need to override the onstartactivityForResult to handle the activity
+
+        }
+
+        Log.d(TAG, "end of TakePicture method");
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK && requestCode == REQUEST_IMAGE_PIC){
+            Log.d(TAG, "inside of onActivityResult method");
+
+            Intent intenShowImage = new Intent(this, showImageActivity.class);
+            //create explicite intent to trigger the third activity (showImageActivity)
+            intenShowImage.putExtras(data); //pass data received(image) to 3rd activity
+            startActivity(intenShowImage);
+
+            Log.d(TAG, "end of onActivityResult method");
+        }
 
     }
 }
